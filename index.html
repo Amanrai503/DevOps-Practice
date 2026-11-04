@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Docker Website</title>
+    <title>My Docker Website</title>
 
     <style>
         body {
@@ -19,39 +18,42 @@
             text-align: center;
         }
 
-        .container {
-            padding: 40px;
-        }
-
         h1 {
-            font-size: 42px;
+            font-size: 24px;
             color: #38bdf8;
         }
 
         p {
             color: #cbd5e1;
-            font-size: 18px;
         }
 
         button {
-            padding: 12px 24px;
+            padding: 10px 20px;
             background: #0284c7;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div>
         <h1>Hello from AWS EC2!</h1>
-        <p>This website is running inside a Docker container.</p>
-        <button onclick="alert('Docker deployment successful!')">
-            Test Website
-        </button>
+        <p>This website runs inside Docker.</p>
+
+        <h2 id="count">0</h2>
+        <button onclick="increaseCount()">Click Counter</button>
     </div>
+
+    <script>
+        let count = 0;
+
+        function increaseCount() {
+            count++;
+            document.getElementById("count").innerText = count;
+        }
+    </script>
 </body>
 </html>
-```
